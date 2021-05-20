@@ -20,7 +20,7 @@ export class StateComponent implements OnInit {
     uparrowRecovered:false,
     downarrowDeath:false,
     uparrowDeath:false,
-}
+  }
 
   showDistrict:boolean=false
   sortedDataBasedOnDate
@@ -92,6 +92,9 @@ export class StateComponent implements OnInit {
     this.DailyStatus = test;
     this.DailystateStatus = this.DailyStatus.statewise
   }
+
+
+
 
 
   getStateWise() {

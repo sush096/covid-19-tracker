@@ -1,5 +1,5 @@
 <div class="container">
-  <div class="state row col-lg-12 col-md-12 col-sm-12 col-xs-12">
+  <div class="row col-lg-12 col-md-12 col-sm-12 col-xs-12">
       <div class="header fadeInUp col-md-5" style="animation-delay: 0.5s;">
           <div class="header-mid">
               <div class="last-update col-md-5">
@@ -11,14 +11,16 @@
           </div>
       </div>
 
+      <div class="home-right col-lg-5 col-md-5 col-sm-5 col-xs-12 ">
+  <div class="MapExplorer fadeInUp hide-xs" style="animation-delay: 1.2s; ">
       <div class="header ">
-          <h3>Click on a state for more details</h3>
+          <h6>Click on a state for more details</h6>
       </div>
       <div class="meta1 " *ngIf="SingleStateData">
           <button class="btn btn-success" (click)="OngetState(data.state); showHideData(data) " style="font-weight: 600; ">{{SingleStateData.state}}</button>
       </div>
-  <!-- </div> -->
-  <div class=" map-stats hide-xs " *ngIf="SingleStateData ">
+  </div>
+  <div class=" map-stats hide-xs " *ngIf="SingleStateData">
       <div class="stats no-padd col-xs-3 ">
           <h5>Confirmed</h5>
           <div class="stats-bottom ">
@@ -49,11 +51,10 @@
       </div>
   </div>
   <table>
-    <tbody *ngFor="let data of statewisedata;let i=index ">
+    <!-- <tbody *ngFor="let data of statewisedata;let i=index "> -->
       <!-- <tr class="state "> -->
-      <!-- <td (click)="OngetState(data.state); showHideData(data) " style="font-weight: 600; ">{{data.state}}</td> -->
+      <td (click)="OngetState(data.state); showHideData(data) " style="font-weight: 600; ">{{data.value.stateName}}</td>
       <tr class="nohover" app-district *ngIf="data[ 'show'] "></tr>
-    </tbody>
+    <!-- </tbody> -->
   </table>
-</div>
 </div>

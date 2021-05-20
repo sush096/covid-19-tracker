@@ -96,6 +96,9 @@ export class HomeComponent implements OnInit {
   }
 
 
+
+
+
   getStateWise() {
     this.cs.getDataStateWise().subscribe(data => {
     this.lastrefreshedtime=data.data.lastRefreshed
