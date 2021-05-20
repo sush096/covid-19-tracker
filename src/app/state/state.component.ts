@@ -25,7 +25,7 @@ export class StateComponent implements OnInit {
   showDistrict:boolean=false
   sortedDataBasedOnDate
   private isAscendingSort: boolean = false;
-
+  // private data: any;
   DailystateStatus: Array<any> = [{ state: '', confirmed: '', recovered: '', deaths: '', active: '' }];
   DailyStatus: any = { total: '' }
   statewisedata: Array<any> = [{ state: '', confirmed: '', recovered: '', deaths: '', active: '' }];
@@ -94,9 +94,6 @@ export class StateComponent implements OnInit {
   }
 
 
-
-
-
   getStateWise() {
     this.cs.getDataStateWise().subscribe(data => {
     this.lastrefreshedtime=data.data.lastRefreshed
@@ -135,12 +132,8 @@ export class StateComponent implements OnInit {
     console.log();
   }
 
-  showHideData(data) {
-    if(data && data['show'] == true) {
-      data['show'] = false;
-    } else {
+  showData(data) {
       data['show'] = true;
-    }
   }
 
   sortAscending(data) {
@@ -326,8 +319,6 @@ export class StateComponent implements OnInit {
         }
         return 0;
       }))
-
-
 
       this.calculateDiff(this.sortedDataBasedOnDate)
     }

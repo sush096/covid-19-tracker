@@ -17,6 +17,7 @@ export class CoronaService implements OnInit {
   url_dailycases = 'https://api.rootnet.in/covid19-in/unofficial/covid19india.org/statewise/history'
   ulr_districtwise = "https://api.covid19india.org/state_district_wise.json"
   url_banner = "https://api.covid19india.org/website_data.json"
+
   constructor(private http: HttpClient) { }
   ngOnInit(): void {
 
