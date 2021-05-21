@@ -19,7 +19,7 @@
   margin-bottom: 0px;
 }
 
-.Home {
+.State {
   font-family: "archia";
   margin-top: 10px;
 }
@@ -163,8 +163,6 @@ h5 {
 h4 {
   font-size: 15px!important;
 }
-
-.Level .level-item:first-child {}
 
 .Level .level-item {
   display: flex;
@@ -340,9 +338,9 @@ table tbody:nth-child(odd) tr {
   background-color: white;
 }
 
-table tbody:nth-child(even) tr {
-  /*  background-color: #ddd; */
-}
+/* table tbody:nth-child(even) tr {
+   background-color: #ddd;
+} */
 
 table tbody td:first-child {
   text-align: left;
@@ -462,11 +460,11 @@ table tbody tr td:first-child {
   .svg-parent svg:not(:root) {
       width: 100%;
   }
-  .Home.container {
+  .State.container {
       padding-left: 5px;
       padding-right: 5px;
   }
-  .home-left.col-lg-7.col-md-7.col-sm-7.col-xs-12 {
+  .state-left.col-lg-7.col-md-7.col-sm-7.col-xs-12 {
       padding-left: 0;
       padding-right: 0;
   }
@@ -562,7 +560,7 @@ table tbody tr td:first-child {
   align-self: flex-start;
 }
 
-.home-right {
+.state-right {
   padding-left: 25px;
 }
 

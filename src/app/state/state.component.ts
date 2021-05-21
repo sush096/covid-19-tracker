@@ -20,12 +20,13 @@ export class StateComponent implements OnInit {
     uparrowRecovered:false,
     downarrowDeath:false,
     uparrowDeath:false,
-  }
+}
+
 
   showDistrict:boolean=false
   sortedDataBasedOnDate
   private isAscendingSort: boolean = false;
-  // private data: any;
+
   DailystateStatus: Array<any> = [{ state: '', confirmed: '', recovered: '', deaths: '', active: '' }];
   DailyStatus: any = { total: '' }
   statewisedata: Array<any> = [{ state: '', confirmed: '', recovered: '', deaths: '', active: '' }];
@@ -35,7 +36,7 @@ export class StateComponent implements OnInit {
   lastupdated: any = { hour: 0, minute: 0, second: 0 }
   SingleStateData
   lastrefreshedtime: any;
-
+  data: any;
   constructor(private cs: CoronaService) { }
 
   ngOnInit(): void {
@@ -94,6 +95,11 @@ export class StateComponent implements OnInit {
   }
 
 
+
+
+
+
+
   getStateWise() {
     this.cs.getDataStateWise().subscribe(data => {
     this.lastrefreshedtime=data.data.lastRefreshed
@@ -118,22 +124,16 @@ export class StateComponent implements OnInit {
   }
 
   OngetState(state) {
-
-  this.getDataofState(state)
-
-    this.cs.getState(state)
+  this.cs.getState(state)
     this.cs.getDataDistrictWise(state)
 
   }
-  getDataofState(state: any) {
-   // console.log(this.statewisedata)
-   const f = this.statewisedata.filter(a => a.state==state);
-    this.SingleStateData=f[0]
-    console.log();
-  }
 
-  showData(data) {
+
+  showHideData(data) {
+
       data['show'] = true;
+    
   }
 
   sortAscending(data) {
@@ -319,6 +319,8 @@ export class StateComponent implements OnInit {
         }
         return 0;
       }))
+
+
 
       this.calculateDiff(this.sortedDataBasedOnDate)
     }
